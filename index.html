@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f0e6">
+  <meta name="description" content="브라우저에서 바로 즐기는 오목 게임">
+  <title>오목 — 한 수의 여유</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="layout">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="오목 홈"><span class="brand-mark">五</span><span>오목<span class="brand-dot">.</span></span></a>
+      <span class="eyebrow">A MOMENT TO THINK</span>
+      <button class="icon-button" id="sound-toggle" type="button" aria-label="소리 켜기" title="소리 켜기">♫</button>
+    </header>
+
+    <section class="game-shell" aria-label="오목 게임">
+      <div class="game-heading">
+        <div><p class="overline">CLASSIC BOARD GAME</p><h1>한 수의 <em>여유</em></h1><p class="subtitle">천천히 생각하고, 한 수씩 두어보세요.</p></div>
+        <div class="move-count"><span>TURN</span><strong id="move-count">00</strong></div>
+      </div>
+
+      <div class="game-content">
+        <div class="board-wrap">
+          <div id="board" class="board" role="grid" aria-label="오목판 15행 15열"></div>
+        </div>
+        <aside class="side-panel">
+          <div class="status-card">
+            <div class="status-top"><span class="live-dot"></span><span id="game-state">YOUR GAME</span></div>
+            <p class="turn-label">현재 차례</p>
+            <div class="player-turn"><span id="turn-stone" class="stone black"></span><strong id="turn-name">흑돌</strong></div>
+            <p id="status-message" class="status-message">첫 수를 놓아보세요.</p>
+          </div>
+          <div class="legend"><span><i class="stone black"></i>흑돌</span><span><i class="stone white"></i>백돌</span></div>
+          <div class="controls">
+            <button id="undo" class="button secondary" type="button" disabled><span>↶</span> 한 수 무르기</button>
+            <button id="restart" class="button primary" type="button"><span>＋</span> 새 게임</button>
+          </div>
+          <div class="how-to"><span class="how-icon">✳</span><p><strong>두 사람이 번갈아</strong><br>흑돌부터 시작해 가로, 세로, 대각선으로 돌 다섯 개를 먼저 이어보세요.</p></div>
+          <p class="local-note">친구와 한 화면에서 함께 두는 2인용 게임입니다.</p>
+        </aside>
+      </div>
+      <footer class="game-footer"><span>오목판 15 × 15</span><span>BLACK MOVES FIRST <b>✦</b></span></footer>
+    </section>
+    <p class="page-note">잠깐의 집중, 작은 승리. <span>좋은 한 수를 응원합니다.</span></p>
+  </main>
+  <dialog id="result-dialog" class="result-dialog"><div class="result-star">✦</div><p class="overline">GAME COMPLETE</p><h2 id="result-title">흑돌 승리!</h2><p id="result-copy">멋진 한 수였어요.</p><button id="play-again" class="button primary" type="button">다시 두기</button></dialog>
+  <script src="game.js"></script>
+</body>
+</html>
